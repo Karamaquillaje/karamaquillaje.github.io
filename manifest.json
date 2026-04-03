@@ -1,0 +1,24 @@
+{
+  "name": "Kara Maquillaje",
+  "short_name": "Kara",
+  "description": "Tu tienda de maquillaje favorita, ahora digital",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#faf7fb",
+  "theme_color": "#a367b3",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "images/icon-192.jpg",
+      "sizes": "320x320",
+      "type": "image/jpg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kara Maquillaje</title>
+  <meta name="description" content="Tu tienda de maquillaje favorita, ahora digital"/>
+  <meta name="theme-color" content="#a367b3"/>
+  
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json"/>
+  <link rel="icon" type="image/jpg" href="images/icon-192.jpg"/>
+  <link rel="apple-touch-icon" href="images/icon-192.jpg"/>
+  
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/styles.css"/>
+</head>
+<body>
+  <!-- Contenedor principal (se reemplaza dinámicamente) -->
+  <div id="app"></div>
+  <footer id="main-footer" class="main-footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Kara Maquillaje</h4>
+        <p>Tu tienda de maquillaje favorita, ahora digital. Productos seleccionados con cariño para resaltar tu belleza.</p>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Ayuda</h4>
+        <ul class="footer-links">
+          <li><a href="#" id="link-how-to-buy">¿Cómo comprar?</a></li>
+          <li><a href="#" id="link-about">Sobre nosotros</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Síguenos</h4>
+        <div class="social-links">
+          <a href="https://instagram.com/Kara_maquillaje" class="social-link" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+          <a href="https://facebook.com/Karamaquillaje" class="social-link" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+            </svg>
+          </a>
+          <a href="https://wa.me/+573054389882" class="social-link" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+            </svg>
+          </a>
+          <a href="https://tiktok.com/@Kara_maquillaje" class="social-link" target="_blank" rel="noopener" aria-label="TikTok">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"></path>
+            </svg>
+          </a>
+          <a href="mailto:Karamaquillaje@gmail.com" class="social-link" target="_blank" rel="noopener" aria-label="E-mail">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2026 Kara Maquillaje. Hecho con 💜 para ti.</p>
+    </div>
+  </footer>
+  <!-- Carrito flotante (se oculta en vista carrito) -->
+  <div id="cart-float" class="cart-float hidden">
+    <div class="cart-float-info">
+      <span id="cart-count">0 productos</span>
+      <span id="cart-total">$0.00</span>
+    </div>
+    <button id="cart-float-btn" class="btn-primary">Ver carrito</button>
+  </div>
+
+  <!-- Scripts (módulos ES6) -->
+  <script type="module" src="js/parser.js"></script>
+  <script type="module" src="js/store.js"></script>
+  <script type="module" src="js/views/home.js"></script>
+  <script type="module" src="js/views/product.js"></script>
+  <script type="module" src="js/views/cart.js"></script>
+  <script type="module" src="js/app.js"></script>
+  
+  <!-- Service Worker -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('sw.js')
+          .then(reg => console.log('✅ SW registrado:', reg.scope))
+          .catch(err => console.error('❌ SW falló:', err));
+      });
+    }
+  </script>
+</body>
+</html>
